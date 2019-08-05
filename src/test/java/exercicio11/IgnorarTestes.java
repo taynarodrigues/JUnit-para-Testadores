@@ -21,8 +21,4 @@ public class IgnorarTestes {
 	public void testeIgnoradoComMotivo() {
 		
 	}
-		
-
-	
-
 }

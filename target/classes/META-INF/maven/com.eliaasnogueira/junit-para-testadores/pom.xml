@@ -16,6 +16,14 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+	<dependency>
+   		  <groupId>org.seleniumhq.selenium</groupId>
+    	  <artifactId>selenium-java</artifactId>
+  		  <version>3.6.0</version>
+	</dependency>
+			
 
 		<!-- Dependencia para usar arquivos CSV como massa de dados -->
 		<dependency>
