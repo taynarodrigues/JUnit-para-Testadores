@@ -1,0 +1,202 @@
+JUnit é um framework de testes unitários para linguagem Java, para desenvolver testes unitários apoiada pela técnica de TDD.
+É uma ferramenta open source que provê anotações para identificar testes, asserções(validações para garantir os resultados
+esperados e uma série de funcionalidadades para suportar a criação e execução de testes.
+*Anatomia de um método de teste
+-> Um teste é na verdade um método dentro de uma classe Java
+Todo teste deve ser identificado com a anotação @Test e o método deve ser público, sem retorno (void) e ter um nome.
+Podemos dar o nome que desejarmos para o método.
+*Dica Rápida -> Exibição de Código
+Window->Perspective->Reset Pesrpective..
+*Exercício1
+Criar um método de teste chamado teste1
+Dentro do método de teste, escrever o seguinte código: 
+System.out.println("Teste1 executado."); 
+RESPOSTA:
+package exercicio1;
+import org.junit.Test;
+public class MeuPrimeiroTeste{
+  @Test
+   public void teste1(){
+       Systee
+}
+}
+
+*Execução dos testes, há três indicativos
+->Succeso na cor verde: Quando os testes executam com sucesso.
+->Erro na cor vermelha: Quando algum erro (de lógica ou exceção) ocorre.
+->Falha na cor azul: Quando uma falha na valdação de resultados ocorre.
+*Validações
+-> Que serão inseridas para garantir que um resultado obtido é igual ao resultado esperado chama-se asserção.
+-> As asserções(ou assertions) irão nos dar a certeza do resultado apresentando um resultado positivo ou negativo
+(sucesso ou falha). É necessário importar estaticamente a classe de asserção. É feita no bloco de importação
+(depois da palavras packege e antes da palvra public class.
+O método de validação de verdairo/falso chama-se:
+->assertTrue e => asserfalse.
+*Validação por Igualdade chama-se
+-> assertEquals, no qual recebe dois parâmetros: 
+->resultado esperado
+->resultado obtido 
+... e mostra sucesso ou falha na comparação
+O assertEquals é capaz de validar tipos de dados como string (texto),
+ números (inteiros, float, double) e objetos
+Quando um erro ocorre na validação por igualdade ocorrer a diferença entre a comparação será exibida no
+FailureTrace através de um item chamado org.junit.ComparisonFailure
+
+*O que são Pré e Pós condições
+-> São execuções de alguma ação antes ou depois de cada teste, é comum para os scripts de testes
+como criação de dados; abrir e fechar um browser web, etc.
+
+**Pré Condição que será executado antes do teste.
+->É necessário:
+->Criar um método público e sem retorno (public void)
+->Inserir a a  otação @Before acima do método.
+**Pós Condição que será executado depois do teste
+-> É necessário:
+->Criar um método público e sem retorno (public void)
+->Inserir a anotação @After acima do método
+->Sua sáida no console é:
+=>Executou a pre condicao
+=>Executou o teste
+=>Executou a pos condicao
+***Curiosidade
+Você pode encontrar testes onde o método de pré condição estará com o nome setup 
+e o de pós condição com o nome tearDown, tudo porque na versão anterior do JUnit não existiam as anotações 
+para informar a pré e pós condições, logo eram tratadas com estes nomes.
+
+@BeforClass e @AfterClass que são duas outras formas de pré e pós condições:
+=>Execução de ações antes ou depois da execução da classe de teste.
+O método para ambas as condições deve ser público, estático e sem retorno (public static void)
+
+**Suíte de Teste
+->Uma suíte de testes é um conjunto de testes que serão executados com uma única finalidade.
+->A criação de uma suíte resolve o problema de execução de diversos testes, um por um, para 
+que todos os testes sejam executados.
+->É recomendada a criação de suítes para facilitar a execução dps testes automatizados.
+***Como criar uma Suíte de Teste
+->No JUnit, a suíte é uma classe vazia, ou seja, sem a necessidade de ter métodos de teste.
+-->Esta classe deve possuir duas anotações:
+-->@RunWith --> anotação que deve ser colocada acima do nome da classe para informar ao JUnit
+ que a execução irá disparar diversos testes.
+-->@SuiteClasses --> anotação que deve ser colocada acima do nome da classe para informar ao JUnit 
+ quais são os testes que serão executados.
+A anotação @Runwith deve conter o parâmetro Suite.class
+Exemplo: -> @RunWith(Suite.class)
+	     public class SuitedeTeste{
+	    }
+A anotação @SuiteClass deve conter como parâmetro a lista de classes de testes que serão executadas.
+As classes devem estar entre chaves {}, possuir a extensão .class e estarem separadas por vírgula.
+
+**Data Driven Testing
+É um termo utilizado para descrever testes usando uma mesma fonte de dados, onde estes serão executados de forma automática
+dado a quantidade dados existentes na fonte de dados.
+Exemplo: Se eu tenho uma fonte de dados com  5 registros, o teste irá executar 5 vezez de forma automática, sendo uma execução
+para cada registro contido fonte de dados.
+***Sem Data Drivem
+-> Temos de criar um teste para verificar se uma pessoa pode ou não votar, dado o seu ano de nascimento, ou seja aplicando
+uma tabela de decisão podemos termos vários testes (@Test) em uma classe de teste, o código poderar ser bem grande e sua 
+mautenção mais demorada apesar de ser válida tal aplicação.
+
+
+*****Como estruturar o Data Driven
+->Existem 6 (seis) passos básicos para criar uma classe de teste coma funcionalidade de Data Driven
+1. Entendimento dos dados que serão usados
+2. Criação dos atributos dos dados
+3. Criação do construtor
+4. Criação do Data Driven
+5. Associação dos dados
+6. Informar a execução via Data Driven
+
+ Os dados de entrada são as partes mais importantes do Dat Driven.
+ Os dados de saída são os resultados esperados que, ao invés de ficarem descritos na asserção,
+ ficarão também na massa de dados.
+
+  ****Criação dos atributos de dados
+ É necessário criar atributos para cada dado/informação,que devem ser globais, ou seja, estarem declarados no 
+início da classe de teste.
+Exemplo de votação teremos:
+	String nome;
+	int anoDeNascimento;
+	String resultado;
+ ******Criação do Construtor
+ Para que o script de teste possa interpretar os dados que serão usados dentro dele é necessário criar um
+Construtor em Java, passando como parâmetro os dados que serão utilizados e referenciando-os com os atributos
+dos dados criados.
+ A criação do construtor para o Data Driven tem duas regras:
+	-> O tipo de acesso é sempre público
+	-> nome do construtor é o mesmo nomde da classe
+****Dica -> É colocar o nome dos parâmtros do construtor igual ao nome dos dados de entrada.
+	***Exemplo do construtor:
+ 	public ValidarIdadeParaVotacao_DTT(String nome, int anoDeNascimento, String resltado){
+		this.nome = nome;
+		this.anoDeNascimento = anoDeNascimento;
+		this.resultado = resultado;
+	}
+OBS: Os parâmetros do construtor tem o mesmo nome dos atributos dos dados criados anteriormente, isso é boa prática.
+
+ ******Criação do Data driven
+ Para criar o Data Driven, que será utilizado na execução do script, precisa de seguir 4 passos básicos:
+	1. Criação de um método estático chamado data() que deve retornar uma coleção de objetos.
+	2. Retornar, como array, uma lista de objetos.
+	3. Adicionar os dados que serão utilizados no script de teste.
+	4. Adicionar a anotação @Parameters que diz que, aquele método, contém os dados que serão utilizados.
+ ****Exemplo 
+	@Parameters
+	  public static Collection<Object> data(){
+		return Arrays.asList(new Object[][]{
+		 {"Maria", 2003, "Maria voce não pode votar"},
+		 {"Pedro", 1947, "Pedro seu voto é facultativo},
+	    });
+         } 
+        Relembrando: 
+	1.Método estático data()
+	2.Retorno com array de objetos
+	3.Dados que serão utilizados -> separar por vírgulas e abrir e fechar chaves
+	4. Adicção da anotação de parâmetros ->@Oarameters
+
+*****Criação do Data Drive
+    -> Cada linha que inicia com a chave { é uma execução de teste.
+    -> A linha traz daod que será associado com os parâmetros do construtor.
+   ***Exemplo {"Maria", 2003, "Maria voce não pode votar"},
+    -> E na Sequência
+	-> Os dados são passados para o construtor da classe, na ordem em que estão descritos
+		na primeira linha da massa de dados
+	-> O construtor passa as informações para as variáveis globais, de mesmo nome, para que possam
+		 ser utilizadas no teste.
+	-> Os dados da massa de dados, que agora estão nas variáveis globais são utilizados dentro de teste
+***Dica Visualização dos dados executados
+-> Para saber quais dados foram executados ao término d execução podemos adicionar o atributo name na
+anotação @Parameters, onde:
+	-> {index}: o índice corrente da massa de dados, iniciando em 0(zero)
+	->{0}, {1} ..: o primeiro, segundo e assim por diante valor do parâmetro
+   Não é obrigatório o uso dos dois em conjunto.
+  ***Exemplo -> O código abaixo possui dois regitros para amass de dados.O atributo name dentro do @Parameters
+indica que o primeiro, segundo e terceiro parâmtro serão exibidos.
+    @Parameters(name = "{0} | {1} | {2}")
+      public static Collection<Object[]> data(){
+        {"Maria", 2003, "Maria voce não pode votar"},
+	{"Rodrigo", 2001, "Rodrigo seu voto é facultativo"}
+     });
+    }
+***********Data Drive ---Modo por parâmetros
+	Há uma forma mais facilitada de associar os atributos que estão expostos para o script
+de teste com a masa de dados.
+	Podemos utilizar @Parameter, a partir da versão >=4.12 do JUnit para fazer a associação
+do atributo para com a massa de dados. Com a mesma estrutura de massa de daos sabemos que os dados serão 
+lidos sequencialmente...
+
+Revisando->
+ Que temos que criar atributos para cada dado dentro da massa de dados.
+ Depois da criação dos atributos, ao invés da criação do construtor para a associação da 
+massa de dados para com o script usaremos a anotação @Parameter
+ É necessário informar a anotação qual dado o atributo vai guardar, a diferença é que ele inicia a 
+contagem em 0 (zero)
+     Temos o código de exemplo de como associar os daos da massa de dados com os atributos atrvés dos 
+parâmetros:
+      @Parameter(0) public String nome;
+      @Parameter(1) public int anoDeNascimento;
+      @Parameter(2) public String resultado;
+A anotação @Parameter leva qual a ordem de associação dos dados da massa de dados.
+
+
+
+
