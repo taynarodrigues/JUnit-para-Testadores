@@ -16,5 +16,6 @@ public class MeuPrimeiroTeste {
 
 	public void naoEUmTeste() {
 		System.out.println("Esta mensagem nao deve aparecer!");
+		System.out.println("dabadsgfbdg");
 	}
 }
