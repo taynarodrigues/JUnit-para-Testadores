@@ -1,15 +1,15 @@
-JUnit È um framework de testes unit·rios para linguagem Java, para desenvolver testes unit·rios apoiada pela tÈcnica de TDD.
-… uma ferramenta open source que provÍ anotaÁıes para identificar testes, asserÁıes(validaÁıes para garantir os resultados
-esperados e uma sÈrie de funcionalidadades para suportar a criaÁ„o e execuÁ„o de testes.
-*Anatomia de um mÈtodo de teste
--> Um teste È na verdade um mÈtodo dentro de uma classe Java
-Todo teste deve ser identificado com a anotaÁ„o @Test e o mÈtodo deve ser p˙blico, sem retorno (void) e ter um nome.
-Podemos dar o nome que desejarmos para o mÈtodo.
-*Dica R·pida -> ExibiÁ„o de CÛdigo
+JUnit √© um framework de testes unit√°rios para linguagem Java, para desenvolver testes unit√°rios apoiada pela t√©cnica de TDD.
+√â uma ferramenta open source que prov√™ anota√ß√µes para identificar testes, asser√ß√µes(valida√ß√µes para garantir os resultados
+esperados e uma s√©rie de funcionalidadades para suportar a cria√ß√£o e execu√ß√£o de testes.
+*Anatomia de um m√©todo de teste
+-> Um teste √© na verdade um m√©todo dentro de uma classe Java
+Todo teste deve ser identificado com a anota√ß√£o @Test e o m√©todo deve ser p√∫blico, sem retorno (void) e ter um nome.
+Podemos dar o nome que desejarmos para o m√©todo.
+*Dica R√°pida -> Exibi√ß√£o de C√≥digo
 Window->Perspective->Reset Pesrpective..
-*ExercÌcio1
-Criar um mÈtodo de teste chamado teste1
-Dentro do mÈtodo de teste, escrever o seguinte cÛdigo: 
+*Exerc√≠cio1
+Criar um m√©todo de teste chamado teste1
+Dentro do m√©todo de teste, escrever o seguinte c√≥digo: 
 System.out.println("Teste1 executado."); 
 RESPOSTA:
 package exercicio1;
@@ -21,181 +21,181 @@ public class MeuPrimeiroTeste{
 }
 }
 
-*ExecuÁ„o dos testes, h· trÍs indicativos
+*Execu√ß√£o dos testes, h√° tr√™s indicativos
 ->Succeso na cor verde: Quando os testes executam com sucesso.
-->Erro na cor vermelha: Quando algum erro (de lÛgica ou exceÁ„o) ocorre.
-->Falha na cor azul: Quando uma falha na valdaÁ„o de resultados ocorre.
-*ValidaÁıes
--> Que ser„o inseridas para garantir que um resultado obtido È igual ao resultado esperado chama-se asserÁ„o.
--> As asserÁıes(ou assertions) ir„o nos dar a certeza do resultado apresentando um resultado positivo ou negativo
-(sucesso ou falha). … necess·rio importar estaticamente a classe de asserÁ„o. … feita no bloco de importaÁ„o
+->Erro na cor vermelha: Quando algum erro (de l√≥gica ou exce√ß√£o) ocorre.
+->Falha na cor azul: Quando uma falha na valda√ß√£o de resultados ocorre.
+*Valida√ß√µes
+-> Que ser√£o inseridas para garantir que um resultado obtido √© igual ao resultado esperado chama-se asser√ß√£o.
+-> As asser√ß√µes(ou assertions) ir√£o nos dar a certeza do resultado apresentando um resultado positivo ou negativo
+(sucesso ou falha). √â necess√°rio importar estaticamente a classe de asser√ß√£o. √â feita no bloco de importa√ß√£o
 (depois da palavras packege e antes da palvra public class.
-O mÈtodo de validaÁ„o de verdairo/falso chama-se:
+O m√©todo de valida√ß√£o de verdairo/falso chama-se:
 ->assertTrue e => asserfalse.
-*ValidaÁ„o por Igualdade chama-se
--> assertEquals, no qual recebe dois par‚metros: 
+*Valida√ß√£o por Igualdade chama-se
+-> assertEquals, no qual recebe dois par√¢metros: 
 ->resultado esperado
 ->resultado obtido 
-... e mostra sucesso ou falha na comparaÁ„o
-O assertEquals È capaz de validar tipos de dados como string (texto),
- n˙meros (inteiros, float, double) e objetos
-Quando um erro ocorre na validaÁ„o por igualdade ocorrer a diferenÁa entre a comparaÁ„o ser· exibida no
-FailureTrace atravÈs de um item chamado org.junit.ComparisonFailure
+... e mostra sucesso ou falha na compara√ß√£o
+O assertEquals √© capaz de validar tipos de dados como string (texto),
+ n√∫meros (inteiros, float, double) e objetos
+Quando um erro ocorre na valida√ß√£o por igualdade ocorrer a diferen√ßa entre a compara√ß√£o ser√° exibida no
+FailureTrace atrav√©s de um item chamado org.junit.ComparisonFailure
 
-*O que s„o PrÈ e PÛs condiÁıes
--> S„o execuÁıes de alguma aÁ„o antes ou depois de cada teste, È comum para os scripts de testes
-como criaÁ„o de dados; abrir e fechar um browser web, etc.
+*O que s√£o Pr√© e P√≥s condi√ß√µes
+-> S√£o execu√ß√µes de alguma a√ß√£o antes ou depois de cada teste, √© comum para os scripts de testes
+como cria√ß√£o de dados; abrir e fechar um browser web, etc.
 
-**PrÈ CondiÁ„o que ser· executado antes do teste.
-->… necess·rio:
-->Criar um mÈtodo p˙blico e sem retorno (public void)
-->Inserir a a  otaÁ„o @Before acima do mÈtodo.
-**PÛs CondiÁ„o que ser· executado depois do teste
--> … necess·rio:
-->Criar um mÈtodo p˙blico e sem retorno (public void)
-->Inserir a anotaÁ„o @After acima do mÈtodo
-->Sua s·ida no console È:
+**Pr√© Condi√ß√£o que ser√° executado antes do teste.
+->√â necess√°rio:
+->Criar um m√©todo p√∫blico e sem retorno (public void)
+->Inserir a a  ota√ß√£o @Before acima do m√©todo.
+**P√≥s Condi√ß√£o que ser√° executado depois do teste
+-> √â necess√°rio:
+->Criar um m√©todo p√∫blico e sem retorno (public void)
+->Inserir a anota√ß√£o @After acima do m√©todo
+->Sua s√°ida no console √©:
 =>Executou a pre condicao
 =>Executou o teste
 =>Executou a pos condicao
 ***Curiosidade
-VocÍ pode encontrar testes onde o mÈtodo de prÈ condiÁ„o estar· com o nome setup 
-e o de pÛs condiÁ„o com o nome tearDown, tudo porque na vers„o anterior do JUnit n„o existiam as anotaÁıes 
-para informar a prÈ e pÛs condiÁıes, logo eram tratadas com estes nomes.
+Voc√™ pode encontrar testes onde o m√©todo de pr√© condi√ß√£o estar√° com o nome setup 
+e o de p√≥s condi√ß√£o com o nome tearDown, tudo porque na vers√£o anterior do JUnit n√£o existiam as anota√ß√µes 
+para informar a pr√© e p√≥s condi√ß√µes, logo eram tratadas com estes nomes.
 
-@BeforClass e @AfterClass que s„o duas outras formas de prÈ e pÛs condiÁıes:
-=>ExecuÁ„o de aÁıes antes ou depois da execuÁ„o da classe de teste.
-O mÈtodo para ambas as condiÁıes deve ser p˙blico, est·tico e sem retorno (public static void)
+@BeforClass e @AfterClass que s√£o duas outras formas de pr√© e p√≥s condi√ß√µes:
+=>Execu√ß√£o de a√ß√µes antes ou depois da execu√ß√£o da classe de teste.
+O m√©todo para ambas as condi√ß√µes deve ser p√∫blico, est√°tico e sem retorno (public static void)
 
-**SuÌte de Teste
-->Uma suÌte de testes È um conjunto de testes que ser„o executados com uma ˙nica finalidade.
-->A criaÁ„o de uma suÌte resolve o problema de execuÁ„o de diversos testes, um por um, para 
+**Su√≠te de Teste
+->Uma su√≠te de testes √© um conjunto de testes que ser√£o executados com uma √∫nica finalidade.
+->A cria√ß√£o de uma su√≠te resolve o problema de execu√ß√£o de diversos testes, um por um, para 
 que todos os testes sejam executados.
-->… recomendada a criaÁ„o de suÌtes para facilitar a execuÁ„o dps testes automatizados.
-***Como criar uma SuÌte de Teste
-->No JUnit, a suÌte È uma classe vazia, ou seja, sem a necessidade de ter mÈtodos de teste.
--->Esta classe deve possuir duas anotaÁıes:
--->@RunWith --> anotaÁ„o que deve ser colocada acima do nome da classe para informar ao JUnit
- que a execuÁ„o ir· disparar diversos testes.
--->@SuiteClasses --> anotaÁ„o que deve ser colocada acima do nome da classe para informar ao JUnit 
- quais s„o os testes que ser„o executados.
-A anotaÁ„o @Runwith deve conter o par‚metro Suite.class
+->√â recomendada a cria√ß√£o de su√≠tes para facilitar a execu√ß√£o dps testes automatizados.
+***Como criar uma Su√≠te de Teste
+->No JUnit, a su√≠te √© uma classe vazia, ou seja, sem a necessidade de ter m√©todos de teste.
+-->Esta classe deve possuir duas anota√ß√µes:
+-->@RunWith --> anota√ß√£o que deve ser colocada acima do nome da classe para informar ao JUnit
+ que a execu√ß√£o ir√° disparar diversos testes.
+-->@SuiteClasses --> anota√ß√£o que deve ser colocada acima do nome da classe para informar ao JUnit 
+ quais s√£o os testes que ser√£o executados.
+A anota√ß√£o @Runwith deve conter o par√¢metro Suite.class
 Exemplo: -> @RunWith(Suite.class)
 	     public class SuitedeTeste{
 	    }
-A anotaÁ„o @SuiteClass deve conter como par‚metro a lista de classes de testes que ser„o executadas.
-As classes devem estar entre chaves {}, possuir a extens„o .class e estarem separadas por vÌrgula.
+A anota√ß√£o @SuiteClass deve conter como par√¢metro a lista de classes de testes que ser√£o executadas.
+As classes devem estar entre chaves {}, possuir a extens√£o .class e estarem separadas por v√≠rgula.
 
 **Data Driven Testing
-… um termo utilizado para descrever testes usando uma mesma fonte de dados, onde estes ser„o executados de forma autom·tica
+√â um termo utilizado para descrever testes usando uma mesma fonte de dados, onde estes ser√£o executados de forma autom√°tica
 dado a quantidade dados existentes na fonte de dados.
-Exemplo: Se eu tenho uma fonte de dados com  5 registros, o teste ir· executar 5 vezez de forma autom·tica, sendo uma execuÁ„o
+Exemplo: Se eu tenho uma fonte de dados com  5 registros, o teste ir√° executar 5 vezez de forma autom√°tica, sendo uma execu√ß√£o
 para cada registro contido fonte de dados.
 ***Sem Data Drivem
--> Temos de criar um teste para verificar se uma pessoa pode ou n„o votar, dado o seu ano de nascimento, ou seja aplicando
-uma tabela de decis„o podemos termos v·rios testes (@Test) em uma classe de teste, o cÛdigo poderar ser bem grande e sua 
-mautenÁ„o mais demorada apesar de ser v·lida tal aplicaÁ„o.
+-> Temos de criar um teste para verificar se uma pessoa pode ou n√£o votar, dado o seu ano de nascimento, ou seja aplicando
+uma tabela de decis√£o podemos termos v√°rios testes (@Test) em uma classe de teste, o c√≥digo poderar ser bem grande e sua 
+mauten√ß√£o mais demorada apesar de ser v√°lida tal aplica√ß√£o.
 
 
 *****Como estruturar o Data Driven
-->Existem 6 (seis) passos b·sicos para criar uma classe de teste coma funcionalidade de Data Driven
-1. Entendimento dos dados que ser„o usados
-2. CriaÁ„o dos atributos dos dados
-3. CriaÁ„o do construtor
-4. CriaÁ„o do Data Driven
-5. AssociaÁ„o dos dados
-6. Informar a execuÁ„o via Data Driven
+->Existem 6 (seis) passos b√°sicos para criar uma classe de teste coma funcionalidade de Data Driven
+1. Entendimento dos dados que ser√£o usados
+2. Cria√ß√£o dos atributos dos dados
+3. Cria√ß√£o do construtor
+4. Cria√ß√£o do Data Driven
+5. Associa√ß√£o dos dados
+6. Informar a execu√ß√£o via Data Driven
 
- Os dados de entrada s„o as partes mais importantes do Dat Driven.
- Os dados de saÌda s„o os resultados esperados que, ao invÈs de ficarem descritos na asserÁ„o,
- ficar„o tambÈm na massa de dados.
+ Os dados de entrada s√£o as partes mais importantes do Dat Driven.
+ Os dados de sa√≠da s√£o os resultados esperados que, ao inv√©s de ficarem descritos na asser√ß√£o,
+ ficar√£o tamb√©m na massa de dados.
 
-  ****CriaÁ„o dos atributos de dados
- … necess·rio criar atributos para cada dado/informaÁ„o,que devem ser globais, ou seja, estarem declarados no 
-inÌcio da classe de teste.
-Exemplo de votaÁ„o teremos:
+  ****Cria√ß√£o dos atributos de dados
+ √â necess√°rio criar atributos para cada dado/informa√ß√£o,que devem ser globais, ou seja, estarem declarados no 
+in√≠cio da classe de teste.
+Exemplo de vota√ß√£o teremos:
 	String nome;
 	int anoDeNascimento;
 	String resultado;
- ******CriaÁ„o do Construtor
- Para que o script de teste possa interpretar os dados que ser„o usados dentro dele È necess·rio criar um
-Construtor em Java, passando como par‚metro os dados que ser„o utilizados e referenciando-os com os atributos
+ ******Cria√ß√£o do Construtor
+ Para que o script de teste possa interpretar os dados que ser√£o usados dentro dele √© necess√°rio criar um
+Construtor em Java, passando como par√¢metro os dados que ser√£o utilizados e referenciando-os com os atributos
 dos dados criados.
- A criaÁ„o do construtor para o Data Driven tem duas regras:
-	-> O tipo de acesso È sempre p˙blico
-	-> nome do construtor È o mesmo nomde da classe
-****Dica -> … colocar o nome dos par‚mtros do construtor igual ao nome dos dados de entrada.
+ A cria√ß√£o do construtor para o Data Driven tem duas regras:
+	-> O tipo de acesso √© sempre p√∫blico
+	-> nome do construtor √© o mesmo nomde da classe
+****Dica -> √â colocar o nome dos par√¢mtros do construtor igual ao nome dos dados de entrada.
 	***Exemplo do construtor:
  	public ValidarIdadeParaVotacao_DTT(String nome, int anoDeNascimento, String resltado){
 		this.nome = nome;
 		this.anoDeNascimento = anoDeNascimento;
 		this.resultado = resultado;
 	}
-OBS: Os par‚metros do construtor tem o mesmo nome dos atributos dos dados criados anteriormente, isso È boa pr·tica.
+OBS: Os par√¢metros do construtor tem o mesmo nome dos atributos dos dados criados anteriormente, isso √© boa pr√°tica.
 
- ******CriaÁ„o do Data driven
- Para criar o Data Driven, que ser· utilizado na execuÁ„o do script, precisa de seguir 4 passos b·sicos:
-	1. CriaÁ„o de um mÈtodo est·tico chamado data() que deve retornar uma coleÁ„o de objetos.
+ ******Cria√ß√£o do Data driven
+ Para criar o Data Driven, que ser√° utilizado na execu√ß√£o do script, precisa de seguir 4 passos b√°sicos:
+	1. Cria√ß√£o de um m√©todo est√°tico chamado data() que deve retornar uma cole√ß√£o de objetos.
 	2. Retornar, como array, uma lista de objetos.
-	3. Adicionar os dados que ser„o utilizados no script de teste.
-	4. Adicionar a anotaÁ„o @Parameters que diz que, aquele mÈtodo, contÈm os dados que ser„o utilizados.
+	3. Adicionar os dados que ser√£o utilizados no script de teste.
+	4. Adicionar a anota√ß√£o @Parameters que diz que, aquele m√©todo, cont√©m os dados que ser√£o utilizados.
  ****Exemplo 
 	@Parameters
 	  public static Collection<Object> data(){
 		return Arrays.asList(new Object[][]{
-		 {"Maria", 2003, "Maria voce n„o pode votar"},
-		 {"Pedro", 1947, "Pedro seu voto È facultativo},
+		 {"Maria", 2003, "Maria voce n√£o pode votar"},
+		 {"Pedro", 1947, "Pedro seu voto √© facultativo},
 	    });
          } 
         Relembrando: 
-	1.MÈtodo est·tico data()
+	1.M√©todo est√°tico data()
 	2.Retorno com array de objetos
-	3.Dados que ser„o utilizados -> separar por vÌrgulas e abrir e fechar chaves
-	4. AdicÁ„o da anotaÁ„o de par‚metros ->@Oarameters
+	3.Dados que ser√£o utilizados -> separar por v√≠rgulas e abrir e fechar chaves
+	4. Adic√ß√£o da anota√ß√£o de par√¢metros ->@Oarameters
 
-*****CriaÁ„o do Data Drive
-    -> Cada linha que inicia com a chave { È uma execuÁ„o de teste.
-    -> A linha traz daod que ser· associado com os par‚metros do construtor.
-   ***Exemplo {"Maria", 2003, "Maria voce n„o pode votar"},
-    -> E na SequÍncia
-	-> Os dados s„o passados para o construtor da classe, na ordem em que est„o descritos
+*****Cria√ß√£o do Data Drive
+    -> Cada linha que inicia com a chave { √© uma execu√ß√£o de teste.
+    -> A linha traz daod que ser√° associado com os par√¢metros do construtor.
+   ***Exemplo {"Maria", 2003, "Maria voce n√£o pode votar"},
+    -> E na Sequ√™ncia
+	-> Os dados s√£o passados para o construtor da classe, na ordem em que est√£o descritos
 		na primeira linha da massa de dados
-	-> O construtor passa as informaÁıes para as vari·veis globais, de mesmo nome, para que possam
+	-> O construtor passa as informa√ß√µes para as vari√°veis globais, de mesmo nome, para que possam
 		 ser utilizadas no teste.
-	-> Os dados da massa de dados, que agora est„o nas vari·veis globais s„o utilizados dentro de teste
-***Dica VisualizaÁ„o dos dados executados
--> Para saber quais dados foram executados ao tÈrmino d execuÁ„o podemos adicionar o atributo name na
-anotaÁ„o @Parameters, onde:
-	-> {index}: o Ìndice corrente da massa de dados, iniciando em 0(zero)
-	->{0}, {1} ..: o primeiro, segundo e assim por diante valor do par‚metro
-   N„o È obrigatÛrio o uso dos dois em conjunto.
-  ***Exemplo -> O cÛdigo abaixo possui dois regitros para amass de dados.O atributo name dentro do @Parameters
-indica que o primeiro, segundo e terceiro par‚mtro ser„o exibidos.
+	-> Os dados da massa de dados, que agora est√£o nas vari√°veis globais s√£o utilizados dentro de teste
+***Dica Visualiza√ß√£o dos dados executados
+-> Para saber quais dados foram executados ao t√©rmino d execu√ß√£o podemos adicionar o atributo name na
+anota√ß√£o @Parameters, onde:
+	-> {index}: o √≠ndice corrente da massa de dados, iniciando em 0(zero)
+	->{0}, {1} ..: o primeiro, segundo e assim por diante valor do par√¢metro
+   N√£o √© obrigat√≥rio o uso dos dois em conjunto.
+  ***Exemplo -> O c√≥digo abaixo possui dois regitros para amass de dados.O atributo name dentro do @Parameters
+indica que o primeiro, segundo e terceiro par√¢mtro ser√£o exibidos.
     @Parameters(name = "{0} | {1} | {2}")
       public static Collection<Object[]> data(){
-        {"Maria", 2003, "Maria voce n„o pode votar"},
-	{"Rodrigo", 2001, "Rodrigo seu voto È facultativo"}
+        {"Maria", 2003, "Maria voce n√£o pode votar"},
+	{"Rodrigo", 2001, "Rodrigo seu voto √© facultativo"}
      });
     }
-***********Data Drive ---Modo por par‚metros
-	H· uma forma mais facilitada de associar os atributos que est„o expostos para o script
+***********Data Drive ---Modo por par√¢metros
+	H√° uma forma mais facilitada de associar os atributos que est√£o expostos para o script
 de teste com a masa de dados.
-	Podemos utilizar @Parameter, a partir da vers„o >=4.12 do JUnit para fazer a associaÁ„o
-do atributo para com a massa de dados. Com a mesma estrutura de massa de daos sabemos que os dados ser„o 
+	Podemos utilizar @Parameter, a partir da vers√£o >=4.12 do JUnit para fazer a associa√ß√£o
+do atributo para com a massa de dados. Com a mesma estrutura de massa de daos sabemos que os dados ser√£o 
 lidos sequencialmente...
 
 Revisando->
  Que temos que criar atributos para cada dado dentro da massa de dados.
- Depois da criaÁ„o dos atributos, ao invÈs da criaÁ„o do construtor para a associaÁ„o da 
-massa de dados para com o script usaremos a anotaÁ„o @Parameter
- … necess·rio informar a anotaÁ„o qual dado o atributo vai guardar, a diferenÁa È que ele inicia a 
+ Depois da cria√ß√£o dos atributos, ao inv√©s da cria√ß√£o do construtor para a associa√ß√£o da 
+massa de dados para com o script usaremos a anota√ß√£o @Parameter
+ √â necess√°rio informar a anota√ß√£o qual dado o atributo vai guardar, a diferen√ßa √© que ele inicia a 
 contagem em 0 (zero)
-     Temos o cÛdigo de exemplo de como associar os daos da massa de dados com os atributos atrvÈs dos 
-par‚metros:
+     Temos o c√≥digo de exemplo de como associar os daos da massa de dados com os atributos atrv√©s dos 
+par√¢metros:
       @Parameter(0) public String nome;
       @Parameter(1) public int anoDeNascimento;
       @Parameter(2) public String resultado;
-A anotaÁ„o @Parameter leva qual a ordem de associaÁ„o dos dados da massa de dados.
+A anota√ß√£o @Parameter leva qual a ordem de associa√ß√£o dos dados da massa de dados.
 
 
 
